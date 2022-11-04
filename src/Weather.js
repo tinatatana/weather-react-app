@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import FormatedDate from "./FormatedDate";
 import axios from "axios";
 import "./Weather.css";
 
@@ -7,14 +7,13 @@ export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
-      date: "Wednesday, 03.11.2022",
+      date: new Date(response.data.dt * 1000),
       iconUrl: "https://cdn-icons-png.flaticon.com/512/2580/2580627.png",
       city: response.data.name,
     });
@@ -45,7 +44,10 @@ export default function Weather(props) {
           <h1>{weatherData.city}</h1>
           <div className="col-6">
             <ul>
-              <li>{weatherData.date}</li>
+              <li>
+                {" "}
+                <FormatedDate date={weatherData.date} />{" "}
+              </li>
               <li className="text-capitalize">{weatherData.description}</li>
               <li>
                 {" "}
