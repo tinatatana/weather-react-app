@@ -15,7 +15,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
-      iconUrl: "https://cdn-icons-png.flaticon.com/512/2580/2580627.png",
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`,
       city: response.data.name,
     });
   }
