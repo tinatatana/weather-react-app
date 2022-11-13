@@ -2,8 +2,52 @@
   border: 1px solid;
   border-radius: 4px;
   padding: 20px 20px;
-}
 
+  background: rgba(0, 0, 0, 0.4);
+  background-image: url("nature.jpeg");
+  background-size: 120%;
+}
+.search {
+  padding: 10px 10px;
+  opacity: default;
+}
+.WeatherInfo {
+  margin: 20px 20px;
+  background: rgb(207, 232, 253, 0.7);
+  font-size: 18px;
+}
+.button {
+  color: black;
+  background-color: rgb(47, 49, 46, 0.6);
+  border: 1px solid black;
+  border-radius: 4px;
+}
+.button:hover {
+  background-color: rgb(207, 232, 253, 0.7);
+}
+.city-name {
+  padding-top: 10px;
+  margin-left: 30px;
+}
 .Weather li {
   list-style: none;
+}
+.date {
+  text-decoration: underline;
+}
+.temperature {
+  font-weight: bold;
+  font-size: 20px;
+}
+.WeatherForecast {
+  padding: 10px 10px;
+  background-color: rgb(207, 232, 253, 0.7);
+  font-size: 18px;
+}
+.WeatherForecast-day {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.WeatherForecast-temperature-max {
+  margin-right: 5px;
 }
